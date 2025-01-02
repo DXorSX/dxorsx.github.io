@@ -10,28 +10,27 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Blog n Doc - Blog n Doc</title>
-<meta name="description" content="Kleines Tech-Blog und Dokumentation der Homelab Eskapaden …">
+<!-- begin _includes/seo.html --><title>Second Test Post - Blog n Doc</title>
+<meta name="description" content="Test der Syntax">
 
 
-  <meta name="author" content="Your Name">
-  
 
-
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Blog n Doc">
-<meta property="og:title" content="Blog n Doc">
-<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:title" content="Second Test Post">
+<meta property="og:url" content="http://localhost:4000/jekyll/update/Second-Test-Posting/">
 
 
-  <meta property="og:description" content="Kleines Tech-Blog und Dokumentation der Homelab Eskapaden …">
-
-
-
+  <meta property="og:description" content="Test der Syntax">
 
 
 
+
+
+
+
+  <meta property="article:published_time" content="2025-01-02T14:00:06+01:00">
 
 
 
@@ -42,20 +41,10 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/">
+<link rel="canonical" href="http://localhost:4000/jekyll/update/Second-Test-Posting/">
 
 
 
-
-
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-    "name": "Your Name",
-    "url": "http://localhost:4000/"
-}
-</script>
 
 
 
@@ -92,7 +81,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -130,6 +119,8 @@
 
 
 
+
+
 <div id="main" role="main">
   
   <div class="sidebar sticky">
@@ -142,13 +133,8 @@
 
   <div class="author__content">
     <h3 class="author__name p-name" itemprop="name">
-      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Your Name</a>
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url"></a>
     </h3>
-    
-      <div class="author__bio p-note" itemprop="description">
-        <p>I am an <strong>amazing</strong> person.</p>
-
-      </div>
     
   </div>
 
@@ -156,25 +142,7 @@
     <button class="btn btn--inverse">Follow</button>
     <ul class="author__urls social-icons">
       
-        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Somewhere</span>
-        </li>
-      
 
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
       
 
       
@@ -241,33 +209,20 @@
 
 
 
-  <div class="archive">
-    
-      <h1 id="page-title" class="page__title"></h1>
-    
-    
-
-<h3 class="archive__subtitle">Recent Posts</h3>
-
-
-
-
-<div class="entries-list">
-  
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Second Test Post">
+    <meta itemprop="description" content="Test der Syntax">
+    <meta itemprop="datePublished" content="2025-01-02T14:00:06+01:00">
     
 
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
+    <div class="page__inner-wrap">
       
-        <a href="/jekyll/update/Second-Test-Posting/" rel="permalink">Second Test Post
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/jekyll/update/Second-Test-Posting/" itemprop="url">Second Test Post
 </a>
-      
-    </h2>
-    
+          </h1>
+          
 
   <p class="page__meta">
     
@@ -288,18 +243,96 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Test der Syntax
+        </header>
+      
 
-</p>
-  </article>
-</div>
+      <section class="page__content" itemprop="text">
+        
+        <p>Test der Syntax</p>
+
+<p>Code snippets:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
 
   
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
     
+      <a href="/categories/#jekyll" class="page__taxonomy-item p-category" rel="tag">jekyll</a><span class="sep">, </span>
+    
+      <a href="/categories/#update" class="page__taxonomy-item p-category" rel="tag">update</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-01-02T14:00:06+01:00">January 2, 2025</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Second+Test+Post%20http%3A%2F%2Flocalhost%3A4000%2Fjekyll%2Fupdate%2FSecond-Test-Posting%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjekyll%2Fupdate%2FSecond-Test-Posting%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/jekyll/update/Second-Test-Posting/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/jekyll/update/welcome-to-jekyll/" class="pagination--pager" title="Welcome to Jekyll!
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -333,13 +366,12 @@
   </article>
 </div>
 
-  
+    
+  </div>
 </div>
 
-
-
-
-  </div>
+  
+  
 </div>
 
       
