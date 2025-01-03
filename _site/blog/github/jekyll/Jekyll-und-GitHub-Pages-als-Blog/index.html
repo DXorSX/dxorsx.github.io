@@ -1,0 +1,499 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="de-DE" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Jekyll und GitHub Pages als Blog einrichten | Blog n Doc</title>
+<meta name="description" content="GitHub bietet neben dem Code Repository auch die Möglichkeit Webseiten für seine Projekte zu hosten.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Blog n Doc">
+<meta property="og:title" content="Jekyll und GitHub Pages als Blog einrichten">
+<meta property="og:url" content="http://localhost:4000/blog/github/jekyll/Jekyll-und-GitHub-Pages-als-Blog/">
+
+
+  <meta property="og:description" content="GitHub bietet neben dem Code Repository auch die Möglichkeit Webseiten für seine Projekte zu hosten.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-01-03T09:00:06+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/blog/github/jekyll/Jekyll-und-GitHub-Pages-als-Blog/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Blog n Doc Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/88x88_logo.jpg" alt="Blog n Doc"></a>
+        
+        <a class="site-title" href="/">
+          Blog n Doc
+          
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Jekyll und GitHub Pages als Blog einrichten">
+    <meta itemprop="description" content="GitHub bietet neben dem Code Repository auch die Möglichkeit Webseiten für seine Projekte zu hosten.">
+    <meta itemprop="datePublished" content="2025-01-03T09:00:06+01:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/blog/github/jekyll/Jekyll-und-GitHub-Pages-als-Blog/" itemprop="url">Jekyll und GitHub Pages als Blog einrichten
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>GitHub bietet neben dem Code Repository auch die Möglichkeit Webseiten für seine Projekte zu hosten.</p>
+
+<h1 id="head-101">Quintessenz</h1>
+<p>Die Webseiten werden dabei aus dem GitHub Repository erstellt. Das GitHub Repo <a href="https://github.com/DXorSX/dxorsx.github.io">https://github.com/DXorSX/dxorsx.github.io</a> wird zur Webseite <a href="https://dxorsx.github.io/">https://dxorsx.github.io/</a>
+Der Schnellstart ist <a href="https://pages.github.com/">hier</a> perfekt erklärt.</p>
+<blockquote>
+  <p><strong>Achtung:</strong> Das Repo muss exakt so heißen wie die spätere GitHub.io Page!</p>
+</blockquote>
+
+<p>Nachfolgend die Einrichtung im Schnelldurchlauf nachdem ihr ein leeres GitHub Repository angelegt habt, Details siehe weiter <a href="#head-201">unten</a></p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    <span class="c"># Repository lokal clonen</span>
+    git clone https://github.com/dxorsx/dxorsx.github.io
+    <span class="nb">cd </span>dxorsx.github.io
+    <span class="c"># Jeykll initiieren</span>
+    jekyll new <span class="nb">.</span>
+    <span class="c"># Die geänderten Inhalte zurück in das Repository pushen</span>
+    git add <span class="nt">--all</span>
+    git commit <span class="nt">-m</span> <span class="s2">"Initial commit"</span>
+    git push <span class="nt">-u</span> origin main
+  </code></pre></figure>
+
+<p>Nachdem die GitHub Action gelaufen ist finden sich die Inhalte auf <a href="https://dxorsx.github.io/">https://dxorsx.github.io/</a>.</p>
+
+<blockquote>
+  <p><strong>Hinweis:</strong> <code class="language-plaintext highlighter-rouge">dxorsx</code> ist mein GitHub Username. Wollt ihr das nachvollziehen müsst ihr <code class="language-plaintext highlighter-rouge">dxorsx</code> durch euren GitHub Username ersetzen.</p>
+</blockquote>
+
+<hr />
+
+<h1 id="head-201">Jekyll als WebSite Generator</h1>
+<p><a href="https://jekyllrb.com/">Jekyll</a> ist ein Ruby programmierter Parser der aus Plaintext Dateien eine statische Webseite baut.
+Einmal konfiguriert und aufgesetzt könnt ihr Inhalte in simplen Text Dateien ablegen und Jekyll kümmert sich darum das alles hübsch formatiert, verlinkt und erreichbar ist.</p>
+
+<p>Jekyll bietet sich für die Nutzung auf <a href="https://pages.github.io">GitHub Pages</a> weil es von den GitHub Action unterstützt wird.
+Das heißt der Jekyll Parser wird in der GitHub Action ausgeführt. Trotz der guten <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll">Dokumentation</a> habe ich einige Iterationen gebraucht um ein für mich funktionierende Setup zu finden.</p>
+
+<p>Nachfolgend die Schritte die ich durchgeführt habe, die jeweils aktuelles Konfiguration findet ihr in meine <a href="https://github.com/DXorSX/dxorsx.github.io">GitHub Repo</a>.</p>
+
+<h2 id="head-202">Schritt 1: Erstellen einer lokalen Arbeitsumgebung</h2>
+<p>Ich beschreibe das Vorgehen anhand einer Debian Linux Umgebung. Wenn ihr etwas anderes verwendet (Windows/macOS/FreeBSD etc.) schaut in die <a href="https://jekyllrb.com/docs/installation/">Jekyll Installationanleitung</a>.</p>
+
+<p>Installiere notwendige Pakete:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    <span class="nb">sudo </span>apt update
+    <span class="nb">sudo </span>apt <span class="nb">install </span>ruby-full build-essential zlib1g-dev
+  </code></pre></figure>
+
+<p>Mit Ruby haben wir auch den Ruby Package Manager “gem” bekommen. Diesen konfigurieren wir:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    <span class="nb">echo</span> <span class="s1">'# Install Ruby Gems to ~/gems'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+    <span class="nb">echo</span> <span class="s1">'export GEM_HOME="$HOME/gems"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+    <span class="nb">echo</span> <span class="s1">'export PATH="$HOME/gems/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+    <span class="nb">source</span> ~/.bashrc
+  </code></pre></figure>
+
+<p>und installieren anschließen Jekyll:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    gem <span class="nb">install </span>jekyll bundler
+  </code></pre></figure>
+
+<h2 id="head-203">Schritt 2: Gemfile anpassen</h2>
+<p>Das <code class="language-plaintext highlighter-rouge">Gemfile</code> editieren und den Eintrag <code class="language-plaintext highlighter-rouge">gem "jekyll"</code> mit einem <code class="language-plaintext highlighter-rouge">#</code> auskommentieren und die Zeile <code class="language-plaintext highlighter-rouge">gem "github-pages"</code> ergänzen.
+Da ich das Jekyll Template <a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes</a> nutze kommen bei mir noch die Einträge <code class="language-plaintext highlighter-rouge">gem "minimal-mistakes-jekyll"</code> und <code class="language-plaintext highlighter-rouge">gem "jekyll-remote-theme"</code> hinzu.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    <span class="nb">source</span> <span class="s2">"https://rubygems.org"</span>
+    <span class="c"># Hello! This is where you manage which Jekyll version is used to run.</span>
+    <span class="c"># When you want to use a different version, change it below, save the</span>
+    <span class="c"># file and run `bundle install`. Run Jekyll with `bundle exec`, like so:</span>
+    <span class="c">#</span>
+    <span class="c">#     bundle exec jekyll serve</span>
+    <span class="c">#</span>
+    <span class="c"># This will help ensure the proper Jekyll version is running.</span>
+    <span class="c"># Happy Jekylling!</span>
+    <span class="c"># gem "jekyll", "~&gt; 4.3.1"</span>
+    gem <span class="s2">"github-pages"</span>
+    <span class="c"># This is the default theme for new Jekyll sites. You may change this to anything you like.</span>
+    <span class="c"># gem "minima", "~&gt; 2.5"</span>
+    gem <span class="s2">"minimal-mistakes-jekyll"</span>
+    gem <span class="s2">"jekyll-remote-theme"</span>
+    <span class="c"># If you want to use GitHub Pages, remove the "gem "jekyll"" above and</span>
+    <span class="c"># uncomment the line below. To upgrade, run `bundle update github-pages`.</span>
+    <span class="c"># gem "github-pages", group: :jekyll_plugins</span>
+    <span class="c"># If you have any plugins, put them here!</span>
+    group :jekyll_plugins <span class="k">do
+      </span>gem <span class="s2">"jekyll-feed"</span>, <span class="s2">"~&gt; 0.12"</span>
+    end
+
+    <span class="c"># Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem</span>
+    <span class="c"># and associated library.</span>
+    platforms :mingw, :x64_mingw, :mswin, :jruby <span class="k">do
+      </span>gem <span class="s2">"tzinfo"</span>, <span class="s2">"&gt;= 1"</span>, <span class="s2">"&lt; 3"</span>
+      gem <span class="s2">"tzinfo-data"</span>
+    end
+
+    <span class="c"># Performance-booster for watching directories on Windows</span>
+    gem <span class="s2">"wdm"</span>, <span class="s2">"~&gt; 0.1.1"</span>, :platforms <span class="o">=&gt;</span> <span class="o">[</span>:mingw, :x64_mingw, :mswin]
+
+    <span class="c"># Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem</span>
+    <span class="c"># do not have a Java counterpart.</span>
+    gem <span class="s2">"http_parser.rb"</span>, <span class="s2">"~&gt; 0.6.0"</span>, :platforms <span class="o">=&gt;</span> <span class="o">[</span>:jruby]
+  </code></pre></figure>
+
+<p>Die aktuelle Version meines Gemfiles findet ihr im <a href="https://github.com/DXorSX/dxorsx.github.io/blob/main/Gemfile">GitHub Repo</a>.</p>
+
+<blockquote>
+  <p>Wichtig: Nachdem ihr das Gemfile angepasst habt müsst ihr <code class="language-plaintext highlighter-rouge">bundle install</code> ausführen um alles zu aktualisieren.</p>
+</blockquote>
+
+<h2 id="head-203">Schritt 3: _config.yml anpassen</h2>
+<p>Die _config.yml ist individuell und muss auch individuell angepasst werden.
+Ein simple Version kann so aussehen:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    domain: my-site.github.io       <span class="c"># if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com</span>
+    url: https://my-site.github.io  <span class="c"># the base hostname and protocol for your site, e.g. http://example.com</span>
+    baseurl: /REPOSITORY-NAME/      <span class="c"># place folder name if the site is served in a subfolder</span>
+  </code></pre></figure>
+
+<p>oder wenn ihr das <a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes</a> Template nutzt auch viel größer <a href="https://github.com/DXorSX/dxorsx.github.io/blob/main/_config.yml">_config.yml</a></p>
+
+<h2 id="head-204">Schritt 4: Lokal testen</h2>
+<p>Nachdem ihr alles angepasst habt bleibt der erste Testlauf, dazu bringt Jekyll einen eigenen kleinen WebServer mit den wir mit</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    bundle <span class="nb">exec </span>jekyll server
+  </code></pre></figure>
+
+<p>startet. Ihr könnt dann vom lokalen Rechner aus darauf zu greifen <a href="http://127.0.0.1:4000">http://127.0.0.1:4000</a> vergesst nicht den Prozess jedes Mal neu zu starten wenn ihr etwas verändert habt.</p>
+
+<h2 id="head-205">Schritt 5: Auf GitHub veröffentlichen</h2>
+<p>Wenn ihr nun die Inhalte auf GitHub veröffentlicht:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">git add <span class="nt">--all</span>
+git commit <span class="nt">-m</span> <span class="s2">"Initial commit"</span>
+git push <span class="nt">-u</span> origin main</code></pre></figure>
+
+<p>Könnt ihr in eurem GitHub Repository unter Actions den Status einsehen und falls etwas schiefgeht im Logfile nach Hinweisen suchen.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">Blog</a><span class="sep">, </span>
+    
+      <a href="/categories/#github" class="page__taxonomy-item p-category" rel="tag">GitHub</a><span class="sep">, </span>
+    
+      <a href="/categories/#jekyll" class="page__taxonomy-item p-category" rel="tag">Jekyll</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-01-03T09:00:06+01:00">January 3, 2025</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://twitter.com/intent/tweet?text=Jekyll+und+GitHub+Pages+als+Blog+einrichten%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fgithub%2Fjekyll%2FJekyll-und-GitHub-Pages-als-Blog%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fgithub%2Fjekyll%2FJekyll-und-GitHub-Pages-als-Blog%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/blog/github/jekyll/Jekyll-und-GitHub-Pages-als-Blog/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/jekyll/update/welcome-to-jekyll/" class="pagination--pager" title="Welcome to Jekyll!">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/500x300_teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/jekyll/update/welcome-to-jekyll/" rel="permalink">Welcome to Jekyll!
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Blog n Doc</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
