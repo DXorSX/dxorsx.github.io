@@ -11,6 +11,7 @@ GitHub bietet neben dem Code Repository auch die Möglichkeit Webseiten für sei
 
 # Quintessenz {#head-101}
 Die Webseiten werden dabei aus dem GitHub Repository erstellt. Das GitHub Repo [https://github.com/DXorSX/dxorsx.github.io](https://github.com/DXorSX/dxorsx.github.io) wird zur Webseite [https://dxorsx.github.io/](https://dxorsx.github.io/)
+
 Der Schnellstart ist [hier](https://pages.github.com/) perfekt erklärt.
 > **Achtung:** Das Repo muss exakt so heißen wie die spätere GitHub.io Page!
 
@@ -45,7 +46,7 @@ Nachfolgend die Schritte die ich durchgeführt habe, die jeweils aktuelles Konfi
 
 
 ## Schritt 1: Erstellen einer lokalen Arbeitsumgebung {#head-202}
-Ich beschreibe das Vorgehen anhand einer Debian Linux Umgebung. Wenn ihr etwas anderes verwendet (Windows/macOS/FreeBSD etc.) schaut in die [Jekyll Installationanleitung][jekyll-install].
+Ich beschreibe das Vorgehen anhand einer Debian Linux Umgebung. Wenn ihr etwas anderes verwendet (Windows/macOS/FreeBSD etc.) schaut in die [Jekyll Installationsanleitung][jekyll-install].
 
 Installiere notwendige Pakete:
   {% highlight shell %}
