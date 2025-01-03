@@ -3,6 +3,7 @@ layout: single
 title:  "Jekyll und GitHub Pages als Blog einrichten"
 date:   2025-01-03 09:00:06 +0100
 categories: Blog GitHub Jekyll
+comments: true
 author: Tom
 ---
 
