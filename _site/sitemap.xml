@@ -2,11 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://localhost:4000/jekyll/update/welcome-to-jekyll/</loc>
-<lastmod>2025-01-02T13:22:06+01:00</lastmod>
+<lastmod>2025-01-01T13:22:06+01:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/blog/github/jekyll/Jekyll-und-GitHub-Pages-als-Blog/</loc>
 <lastmod>2025-01-03T09:00:06+01:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/blog/dnp-ds-rx1hs/raspberry-pi/cups/airprint/Print-HotFolder2DNP-PhotoPrinter/</loc>
+<lastmod>2025-01-04T12:00:06+01:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about/</loc>

@@ -1,0 +1,643 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.26.2 by Michael Rose
+  Copyright 2013-2024 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="de-DE" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>DNP DS-RX1HS mit Gutenprint, Raspberry Pi und CUPS AirPrint fähig machen | Blog n Doc</title>
+<meta name="description" content="Der [DS-RX1HS][dnp-hp] von DNP ist ein 6 Zoll Fotodrucker. Mithilfe eines Raspberry Pi und ein bisschen freier Software wird der Drucker AirPrint fähig und akzeptiert Fotos direkt vom Apple iPhone.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Blog n Doc">
+<meta property="og:title" content="DNP DS-RX1HS mit Gutenprint, Raspberry Pi und CUPS AirPrint fähig machen">
+<meta property="og:url" content="http://localhost:4000/blog/dnp-ds-rx1hs/raspberry-pi/cups/airprint/Print-HotFolder2DNP-PhotoPrinter/">
+
+
+  <meta property="og:description" content="Der [DS-RX1HS][dnp-hp] von DNP ist ein 6 Zoll Fotodrucker. Mithilfe eines Raspberry Pi und ein bisschen freier Software wird der Drucker AirPrint fähig und akzeptiert Fotos direkt vom Apple iPhone.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-01-04T12:00:06+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/blog/dnp-ds-rx1hs/raspberry-pi/cups/airprint/Print-HotFolder2DNP-PhotoPrinter/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Blog n Doc Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/88x88_logo.jpg" alt="Blog n Doc"></a>
+        
+        <a class="site-title" href="/">
+          Blog n Doc
+          
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="DNP DS-RX1HS mit Gutenprint, Raspberry Pi und CUPS AirPrint fähig machen">
+    <meta itemprop="description" content="Der [DS-RX1HS][dnp-hp] von DNP ist ein 6 Zoll Fotodrucker. Mithilfe eines Raspberry Pi und ein bisschen freier Software wird der Drucker AirPrint fähig und akzeptiert Fotos direkt vom Apple iPhone.">
+    <meta itemprop="datePublished" content="2025-01-04T12:00:06+01:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/blog/dnp-ds-rx1hs/raspberry-pi/cups/airprint/Print-HotFolder2DNP-PhotoPrinter/" itemprop="url">DNP DS-RX1HS mit Gutenprint, Raspberry Pi und CUPS AirPrint fähig machen
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Der [DS-RX1HS][dnp-hp] von DNP ist ein 6 Zoll Fotodrucker. Mithilfe eines Raspberry Pi und ein bisschen freier Software wird der Drucker AirPrint fähig und akzeptiert Fotos direkt vom Apple iPhone.</p>
+
+<h1 id="head-101">Quintessenz</h1>
+
+<p>Das Vorgehen ist in wenigen Schritten umrissen:</p>
+<ol>
+  <li>Installation Raspberry OS auf einem RPI (= Rapberry Pi).</li>
+  <li>Konfiguration SSH und WLAN am RPI</li>
+  <li>CUPS und Gutenprint installieren, konfigurieren.</li>
+  <li>Drucker verbinden und konfigurieren</li>
+  <li>Drucken via AirPrint und HotFolder</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    <span class="c"># CUPS und GutenPrint installieren</span>
+    <span class="nb">sudo </span>apt update
+    <span class="nb">sudo </span>apt upgrade
+    <span class="nb">sudo </span>apt <span class="nb">install </span>cups cups-pdf cups-tea4cups printer-driver-gutenprint wget
+    <span class="c"># CUPS Konfigurieren</span>
+    <span class="nb">sudo </span>cupsctl <span class="nt">--remote-admin</span>   <span class="c"># Remote zugriff auf https://printbox:631 erlauben</span>
+    <span class="nb">sudo </span>cupsctl <span class="nt">--share-printers</span> <span class="c"># Drucker freigeben</span>
+    <span class="nb">sudo </span>cupsctl <span class="nt">--remote-any</span><span class="nb">.</span>    <span class="c"># In jedem Subnetz</span>
+    <span class="nb">sudo </span>usermod <span class="nt">-aG</span> lpadmin pi
+    <span class="nb">sudo </span>systemctl restart cups
+  </code></pre></figure>
+
+<ul>
+  <li>Der Drucker wird via USB mit dem RPI verbunden.</li>
+  <li>Das WebInterface  <a href="https://printbox:631">https://printbox:631</a> öffnen und der Drucker mit folgenden Parametern anlegen
+    <ul>
+      <li>Beschreibung:	Dai Nippon Printing DS-RX1</li>
+      <li>Treiber:	Dai Nippon Printing DSRX1 - CUPS+Gutenprint v5.3.1 (farbig, 2-seitiges Drucken)</li>
+      <li>Verbindung:	gutenprint53+usb://dnp-dsrx1/CY2D04083833</li>
+      <li>Standardeinstellungen:	job-sheets=none, none media=om_w288h432_104.99x162.56mm sides=one-side</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Das meiste sollte CUPS direkt erkennen.</p>
+
+<p>AirPrint Einrichten</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    pip3 <span class="nb">install </span>pycups
+    <span class="nb">cd</span> <span class="si">$(</span><span class="nb">mktemp</span> <span class="nt">-d</span><span class="si">)</span>
+    wget https://raw.githubusercontent.com/DXorSX/airprint-generate/blob/master/airprint-generate.py
+    ./airprint-generate.py
+    <span class="nb">mv</span> ./<span class="k">*</span>.service /etc/avahi/services/
+    <span class="nb">sudo </span>systemctl restart avahi-daemon
+  </code></pre></figure>
+
+<p>Abfrage wieviel Drucke noch möglich sind</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    <span class="si">$(</span>lpoptions <span class="nt">-d</span> DNP-DS-RX1 | <span class="nb">sed</span> <span class="nt">-n</span> <span class="s1">'s/.*marker-message=.\([0-9].*media\)\(.*\)/\1/p'</span><span class="si">)</span>
+  </code></pre></figure>
+
+<p>HotFolder Script:</p>
+<ul>
+  <li>https://github.com/DXorSX/HotFolder2PhotoPrinter/blob/main/hf2pp.py
+Cron Job to run</li>
+  <li>*/5 * * * * find /home/FotoPrintUser/HotFolder/ -type f -exec /home/FotoPrintUser/send2DNP.sh “{}” \;</li>
+</ul>
+
+<p>[dnp-hp]        :https://www.dnpphoto.eu/de/produkte/fotodrucker/item/252-ds-rx1hs
+[airprint-gen]  :https://github.com/DXorSX/airprint-generate/blob/master/airprint-generate.py</p>
+
+<p>Die Webseiten werden dabei aus dem GitHub Repository erstellt. Das GitHub Repo <a href="https://github.com/DXorSX/dxorsx.github.io">https://github.com/DXorSX/dxorsx.github.io</a> wird zur Webseite <a href="https://dxorsx.github.io/">https://dxorsx.github.io/</a></p>
+
+<p>Der Schnellstart ist <a href="https://pages.github.com/">hier</a> perfekt erklärt.</p>
+<blockquote>
+  <p><strong>Achtung:</strong> Das Repo muss exakt so heißen wie die spätere GitHub.io Page!</p>
+</blockquote>
+
+<p>Nachfolgend die Einrichtung im Schnelldurchlauf nachdem ihr ein leeres GitHub Repository angelegt habt, Details siehe weiter <a href="#head-201">unten</a></p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    <span class="c"># Repository lokal clonen</span>
+    git clone https://github.com/dxorsx/dxorsx.github.io
+    <span class="nb">cd </span>dxorsx.github.io
+    <span class="c"># Jeykll initiieren</span>
+    jekyll new <span class="nb">.</span>
+    <span class="c"># Die geänderten Inhalte zurück in das Repository pushen</span>
+    git add <span class="nt">--all</span>
+    git commit <span class="nt">-m</span> <span class="s2">"Initial commit"</span>
+    git push <span class="nt">-u</span> origin main
+  </code></pre></figure>
+
+<p>Nachdem die GitHub Action gelaufen ist finden sich die Inhalte auf <a href="https://dxorsx.github.io/">https://dxorsx.github.io/</a>.</p>
+
+<blockquote>
+  <p><strong>Hinweis:</strong> <code class="language-plaintext highlighter-rouge">dxorsx</code> ist mein GitHub Username. Wollt ihr das nachvollziehen müsst ihr <code class="language-plaintext highlighter-rouge">dxorsx</code> durch euren GitHub Username ersetzen.</p>
+</blockquote>
+
+<hr />
+
+<h1 id="head-201">Jekyll als WebSite Generator</h1>
+<p><a href="https://jekyllrb.com/">Jekyll</a> ist ein Ruby programmierter Parser der aus Plaintext Dateien eine statische Webseite baut.
+Einmal konfiguriert und aufgesetzt könnt ihr Inhalte in simplen Text Dateien ablegen und Jekyll kümmert sich darum das alles hübsch formatiert, verlinkt und erreichbar ist.</p>
+
+<p>Jekyll bietet sich für die Nutzung auf <a href="https://pages.github.io">GitHub Pages</a> weil es von den GitHub Action unterstützt wird.
+Das heißt der Jekyll Parser wird in der GitHub Action ausgeführt. Trotz der guten <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll">Dokumentation</a> habe ich einige Iterationen gebraucht um ein für mich funktionierende Setup zu finden.</p>
+
+<p>Nachfolgend die Schritte die ich durchgeführt habe, die jeweils aktuelles Konfiguration findet ihr in meine <a href="https://github.com/DXorSX/dxorsx.github.io">GitHub Repo</a>.</p>
+
+<h2 id="head-202">Schritt 1: Erstellen einer lokalen Arbeitsumgebung</h2>
+<p>Ich beschreibe das Vorgehen anhand einer Debian Linux Umgebung. Wenn ihr etwas anderes verwendet (Windows/macOS/FreeBSD etc.) schaut in die <a href="https://jekyllrb.com/docs/installation/">Jekyll Installationsanleitung</a>.</p>
+
+<p>Installiere notwendige Pakete:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    <span class="nb">sudo </span>apt update
+    <span class="nb">sudo </span>apt <span class="nb">install </span>ruby-full build-essential zlib1g-dev
+  </code></pre></figure>
+
+<p>Mit Ruby haben wir auch den Ruby Package Manager “gem” bekommen. Diesen konfigurieren wir:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    <span class="nb">echo</span> <span class="s1">'# Install Ruby Gems to ~/gems'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+    <span class="nb">echo</span> <span class="s1">'export GEM_HOME="$HOME/gems"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+    <span class="nb">echo</span> <span class="s1">'export PATH="$HOME/gems/bin:$PATH"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+    <span class="nb">source</span> ~/.bashrc
+  </code></pre></figure>
+
+<p>und installieren anschließen Jekyll:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    gem <span class="nb">install </span>jekyll bundler
+  </code></pre></figure>
+
+<h2 id="head-203">Schritt 2: Gemfile anpassen</h2>
+<p>Das <code class="language-plaintext highlighter-rouge">Gemfile</code> editieren und den Eintrag <code class="language-plaintext highlighter-rouge">gem "jekyll"</code> mit einem <code class="language-plaintext highlighter-rouge">#</code> auskommentieren und die Zeile <code class="language-plaintext highlighter-rouge">gem "github-pages"</code> ergänzen.
+Da ich das Jekyll Template <a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes</a> nutze kommen bei mir noch die Einträge <code class="language-plaintext highlighter-rouge">gem "minimal-mistakes-jekyll"</code> und <code class="language-plaintext highlighter-rouge">gem "jekyll-remote-theme"</code> hinzu.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    <span class="nb">source</span> <span class="s2">"https://rubygems.org"</span>
+    <span class="c"># Hello! This is where you manage which Jekyll version is used to run.</span>
+    <span class="c"># When you want to use a different version, change it below, save the</span>
+    <span class="c"># file and run `bundle install`. Run Jekyll with `bundle exec`, like so:</span>
+    <span class="c">#</span>
+    <span class="c">#     bundle exec jekyll serve</span>
+    <span class="c">#</span>
+    <span class="c"># This will help ensure the proper Jekyll version is running.</span>
+    <span class="c"># Happy Jekylling!</span>
+    <span class="c"># gem "jekyll", "~&gt; 4.3.1"</span>
+    gem <span class="s2">"github-pages"</span>
+    <span class="c"># This is the default theme for new Jekyll sites. You may change this to anything you like.</span>
+    <span class="c"># gem "minima", "~&gt; 2.5"</span>
+    gem <span class="s2">"minimal-mistakes-jekyll"</span>
+    gem <span class="s2">"jekyll-remote-theme"</span>
+    <span class="c"># If you want to use GitHub Pages, remove the "gem "jekyll"" above and</span>
+    <span class="c"># uncomment the line below. To upgrade, run `bundle update github-pages`.</span>
+    <span class="c"># gem "github-pages", group: :jekyll_plugins</span>
+    <span class="c"># If you have any plugins, put them here!</span>
+    group :jekyll_plugins <span class="k">do
+      </span>gem <span class="s2">"jekyll-feed"</span>, <span class="s2">"~&gt; 0.12"</span>
+    end
+
+    <span class="c"># Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem</span>
+    <span class="c"># and associated library.</span>
+    platforms :mingw, :x64_mingw, :mswin, :jruby <span class="k">do
+      </span>gem <span class="s2">"tzinfo"</span>, <span class="s2">"&gt;= 1"</span>, <span class="s2">"&lt; 3"</span>
+      gem <span class="s2">"tzinfo-data"</span>
+    end
+
+    <span class="c"># Performance-booster for watching directories on Windows</span>
+    gem <span class="s2">"wdm"</span>, <span class="s2">"~&gt; 0.1.1"</span>, :platforms <span class="o">=&gt;</span> <span class="o">[</span>:mingw, :x64_mingw, :mswin]
+
+    <span class="c"># Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem</span>
+    <span class="c"># do not have a Java counterpart.</span>
+    gem <span class="s2">"http_parser.rb"</span>, <span class="s2">"~&gt; 0.6.0"</span>, :platforms <span class="o">=&gt;</span> <span class="o">[</span>:jruby]
+  </code></pre></figure>
+
+<p>Die aktuelle Version meines Gemfiles findet ihr im <a href="https://github.com/DXorSX/dxorsx.github.io/blob/main/Gemfile">GitHub Repo</a>.</p>
+
+<blockquote>
+  <p>Wichtig: Nachdem ihr das Gemfile angepasst habt müsst ihr <code class="language-plaintext highlighter-rouge">bundle install</code> ausführen um alles zu aktualisieren.</p>
+</blockquote>
+
+<h2 id="head-203">Schritt 3: _config.yml anpassen</h2>
+<p>Die _config.yml ist individuell und muss auch individuell angepasst werden.
+Ein simple Version kann so aussehen:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    domain: my-site.github.io       <span class="c"># if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com</span>
+    url: https://my-site.github.io  <span class="c"># the base hostname and protocol for your site, e.g. http://example.com</span>
+    baseurl: /REPOSITORY-NAME/      <span class="c"># place folder name if the site is served in a subfolder</span>
+  </code></pre></figure>
+
+<p>oder wenn ihr das <a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes</a> Template nutzt auch viel größer <a href="https://github.com/DXorSX/dxorsx.github.io/blob/main/_config.yml">_config.yml</a></p>
+
+<h2 id="head-204">Schritt 4: Lokal testen</h2>
+<p>Nachdem ihr alles angepasst habt bleibt der erste Testlauf, dazu bringt Jekyll einen eigenen kleinen WebServer mit den wir mit</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    bundle <span class="nb">exec </span>jekyll server
+  </code></pre></figure>
+
+<p>startet. Ihr könnt dann vom lokalen Rechner aus darauf zu greifen <a href="http://127.0.0.1:4000">http://127.0.0.1:4000</a> vergesst nicht den Prozess jedes Mal neu zu starten wenn ihr etwas verändert habt.</p>
+
+<h2 id="head-205">Schritt 5: Auf GitHub veröffentlichen</h2>
+<p>Wenn ihr nun die Inhalte auf GitHub veröffentlicht:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">git add <span class="nt">--all</span>
+git commit <span class="nt">-m</span> <span class="s2">"Initial commit"</span>
+git push <span class="nt">-u</span> origin main</code></pre></figure>
+
+<p>Könnt ihr in eurem GitHub Repository unter Actions den Status einsehen und falls etwas schiefgeht im Logfile nach Hinweisen suchen.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#airprint" class="page__taxonomy-item p-category" rel="tag">AirPrint</a><span class="sep">, </span>
+    
+      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">Blog</a><span class="sep">, </span>
+    
+      <a href="/categories/#cups" class="page__taxonomy-item p-category" rel="tag">CUPS</a><span class="sep">, </span>
+    
+      <a href="/categories/#dnp-ds-rx1hs" class="page__taxonomy-item p-category" rel="tag">DNP-DS-RX1HS</a><span class="sep">, </span>
+    
+      <a href="/categories/#raspberry-pi" class="page__taxonomy-item p-category" rel="tag">Raspberry-Pi</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-01-04T12:00:06+01:00">January 4, 2025</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://twitter.com/intent/tweet?text=DNP+DS-RX1HS+mit+Gutenprint%2C+Raspberry+Pi+und+CUPS+AirPrint+f%C3%A4hig+machen%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fdnp-ds-rx1hs%2Fraspberry-pi%2Fcups%2Fairprint%2FPrint-HotFolder2DNP-PhotoPrinter%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fdnp-ds-rx1hs%2Fraspberry-pi%2Fcups%2Fairprint%2FPrint-HotFolder2DNP-PhotoPrinter%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/blog/dnp-ds-rx1hs/raspberry-pi/cups/airprint/Print-HotFolder2DNP-PhotoPrinter/" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/github/jekyll/Jekyll-und-GitHub-Pages-als-Blog/" class="pagination--pager" title="Jekyll und GitHub Pages als Blog einrichten">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+      
+        <p>
+          Comments are configured with provider: <strong>utterances</strong>,
+          but are disabled in non-production environments.
+        </p>
+      
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/500x300_teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/github/jekyll/Jekyll-und-GitHub-Pages-als-Blog/" rel="permalink">Jekyll und GitHub Pages als Blog einrichten
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">GitHub bietet neben dem Code Repository auch die Möglichkeit Webseiten für seine Projekte zu hosten.
+
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/500x300_teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/jekyll/update/welcome-to-jekyll/" rel="permalink">Welcome to Jekyll!
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Blog n Doc</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'DXorSX/dxorsx.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    script.setAttribute('label', 'comment');
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+
+  </body>
+</html>
